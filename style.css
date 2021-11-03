@@ -1,0 +1,463 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+
+    /* COLORS */
+    --color-secondary: #1190CD;
+    --color-secondary-light: #249AD1;
+    --color-forms: #FDD685;
+    --color-forms-border: #FDB10F;
+    --color-forms-border-inside: rgba(0,0,0,0.35);
+    --color-font-primary: rgba(0,0,0,0.87);
+    --color-font-forms: rgba(0,0,0,0.54);
+    --color-font-secondary: #757575;
+    --color-border-light: rgba(0,0,0,0.10);
+
+    /* SHADOW-BOX-PATTERN */
+    --shadow-box-pattern: 1px 1px 3px rgba(0,0,0,0.35);
+
+
+}
+
+/* RESETS */
+
+li {
+    list-style-type: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+input, input:focus {
+    outline: none;
+    border: none;
+}
+
+button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+}
+
+
+
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5rem;
+    width: calc(100vw - 4rem);
+    padding: 0 2rem;
+    background-color: var(--color-secondary);
+}
+
+.left-nav, .right-nav {
+    height: 100%;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-logo {
+    height: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.nav-item li {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    height: 3.5rem;
+    padding: 0 1rem;
+}
+
+.nav-item:hover {
+    background-color: var(--color-secondary-light);
+}
+
+/* BODY */
+main {
+    padding: 0 2rem;
+    max-width: 84rem;
+}
+
+.list-tags ul {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1.5rem;
+    padding-bottom: 0.75rem;
+}
+
+.list-tags a {
+    color: var(--color-font-secondary);
+    font-size: 0.8rem;
+}
+
+.list-tags a:hover {
+    color: var(--color-secondary);
+}
+
+.list-tags li:nth-child(1n+2)::before {
+    display: inline-block;
+    position: relative;
+    content: '.';
+    text-align: center;
+    width: 1rem;
+    top: -3px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    max-height: 31.25rem;
+    border: 1px solid #FDB10F;
+    border-radius: 0.25rem;
+    width: 16rem;
+    padding: 1rem;
+    background-color: #FDD685;
+    color: var(--color-font-forms);
+}
+
+.filter {
+    margin-bottom: 1rem;
+}
+
+.filter:last-child {
+    margin-bottom: 0;
+}
+
+.filter h2 {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+}
+
+#location {
+    width: 13.75rem;
+    font-size: 0.8rem;
+    border: 2px solid rgba(0,0,0,0);
+    border-radius: 4px;
+    padding: 0.8rem 1rem;
+    box-shadow: var(--shadow-box-pattern) ;
+}
+
+#location:focus-within{
+    border: 2px solid var(--color-secondary);
+}
+
+.filter-checkbox {
+    display:flex;
+    flex-direction: row;
+    padding-top: 0.5rem;
+    align-items: center;
+}
+
+.filter-tour {
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-tour-description {
+    display: flex;
+    align-items: center;
+    display: inline-block;
+    height: 2rem;
+    font-size: 0.8rem;
+    padding-left: 0.5rem;
+}
+
+.property-types {
+    width: 100%;
+    font-size: 0.8rem;
+    text-align: left;
+    border-radius: 4px;
+    color: var(--color-font-secondary);
+    padding: 0.8rem 1rem;
+    box-shadow: var(--shadow-box-pattern);
+    background-color: white;
+}
+
+.filter-prices {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* SWITCH */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3.2rem;
+  height: 2rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.1);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  border-radius: 50%;
+  content: "";
+  height: 1.6rem;
+  width: 1.6rem;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(1.2rem);
+  -ms-transform: translateX(1.2rem);
+  transform: translateX(1.2rem);
+}
+
+/* END */
+
+.price-input-container {
+    width: 3rem;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid var(--color-forms-border-inside);
+    border-radius: 3px;
+}
+
+.price-input-container p {
+    font-size: 0.8rem;
+    width: 1rem;
+    padding: 0rem 0.5rem;
+}
+
+.price-input-container input{
+    font-size: 0.8rem;
+    width: 4rem;
+    padding-right: 0.5rem;
+}
+
+.bedrooms-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bedrooms-buttons li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 2.6rem;
+    height: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-box-pattern);
+}
+
+.bedrooms-buttons button {
+    color: var(--color-font-secondary);
+    font-size: 0.8rem;
+}
+
+/* MAIN SECTION */
+
+section {
+    margin-left: 1rem;
+    width: 100%
+}
+
+.classification {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.classification::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid #249AD1;
+}
+
+.classification ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.classification li {
+    padding: 1rem;
+}
+
+.property {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: 3px;
+}
+
+.property-images {
+    height: 15rem;
+    width: 22.5rem;
+    overflow: hidden;
+}
+
+.property img {
+    height: 100%;
+    width: 100%;
+}
+
+.property-description {
+    position: relative;
+    height: 15rem;
+    width: calc(100% - 22.5rem);
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+}
+
+.address h2{
+    font-size: 0.8rem;
+    font-weight: 300;
+    padding-top: 1rem;
+    color: var(--color-forms-border-inside);
+}
+
+.title-text {
+    font-weight: normal;
+    padding: 0.5rem 0;
+    color: var(--color-font-primary);
+    font-size: 1.2rem;
+}
+
+.size-details {
+    font-size: 0.8rem;
+    padding: 1rem 0;
+}
+
+.amenities {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.amenitie {
+    background: rgba(0,0,0,0.05);
+    padding: 0.15rem 0.3rem;
+    border-radius: 0.5rem;
+    margin: 0.25rem;
+}
+
+.amenitie p {
+    font-size: 0.8rem;
+    color: var(--color-forms-border-inside);
+}
+
+.price {
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+.price-container {
+    margin-bottom: 1rem;
+}
+
+.price-value h2 {
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: var(--color-font-primary);
+}
+
+.price-condo h2, .price-condo h2 span{
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: var(--color-font-primary);
+}
+
+.price-condo h2 span {
+    font-weight: bold;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.contact-container p {
+    display: none;
+    color: #EE6500;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    padding: 0.7rem 0.5rem;
+    border-radius: 3px;
+}
+
+.contact-container p:hover {
+    background-color: #EE6500;
+    color: white;
+}
+    

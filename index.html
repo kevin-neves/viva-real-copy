@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>VivaReal</title>
+</head>
+<body>
+    <header>
+        <div class="left-nav">
+            <a href="#" class="main-logo"><img src="./assets/vivareal-logo.svg" alt="VivaReal Logo"></a>
+            <nav>
+                <ul>
+                    <a href="#" class="nav-item"><li>COMPRAR</li></a>
+                    <a href="#" class="nav-item"><li>ALUGAR</li></a>
+                    <a href="#" class="nav-item"><li>IMÓVEI NOVOS</li></a>
+                    <a href="#" class="nav-item"><li>DESCOBRIR</li></a>
+                    <a href="#" class="nav-item"><li>FINANCIAMENTO</li></a>
+                </ul>
+            </nav>
+        </div>
+        <div class="right-nav">
+            <nav>
+                <ul>
+                    <a href="#" class="nav-item"><li>ANUNCIAR IMÓVEIS</li></a>
+                    <a href="#" class="nav-item"><li>ENTRAR</li></a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="list-tags">
+            <ul>
+                <li><a href="#">Viva Real</a></li>
+                <li><a href="#">Venda</a></li>
+                <li><a href="#">Venda</a></li>
+            </ul>
+        </div>
+        <div class="main-container">
+            <aside>
+                <form action="#">
+                    <div class="filter">
+                        <h2 class="filter-title">LOCALIZAÇÃO DO IMÓVEL</h2>
+                        <input type="text" name="location" id="location" 
+                        placeholder="Digite uma rua, bairro ou cidade">
+                        <div id="search-tag"></div>
+                    </div>
+                    <div class="filter">
+                        <h2 class="filter-title">IMÓVEL COM</h2>
+                        <div class="filter-tour">
+                            <label class="switch">
+                                <input type="checkbox" name="filter-tour" id="filter-tour">
+                                <span class="slider round"></span>
+                            </label>
+                            <div class="filter-checkbox">
+                                <label for="filter-tour" class="filter-tour-description">Tour Virtual ou Vídeos</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <h2 class="filter-title">TIPO DE IMÓVEL</h2>
+                        <button type="button" class="property-types">Mostrar todos<span></span></button>
+                        <div class="property-types-list"></div>
+                    </div>
+                    <div class="filter-prices">
+                        <div class="filter">
+                            <h2 class="filter-title">PREÇO MÍNIMO</h2>
+                            <div class="price-input-container">
+                                <p>R$</p>
+                                <input type="text" name="min-price" id="min-price">
+                            </div>
+                        </div>
+                        <div class="filter">
+                            <h2 class="filter-title">PREÇO MÁXIMO</h2>
+                            <div class="price-input-container">
+                                <p>R$</p>
+                                <input type="text" name="max-price" id="max-price" placeholder="ilimitado">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter">
+                        <h2 class="filter-title">NÚMERO DE QUARTOS</h2>
+                        <ul class="bedrooms-buttons">
+                            <li><button type="button" id="rooms-1">1+</button></li>
+                            <li><button type="button" id="rooms-2">2+</button></li>
+                            <li><button type="button" id="rooms-3">3+</button></li>
+                            <li><button type="button" id="rooms-4">4+</button></li>
+                            <li><button type="button" id="rooms-5">5+</button></li>
+                        </ul>
+                    </div>
+                </form>
+            </aside>
+            <section>
+                <div class="classification">
+                    <div class="classification-type">
+                        <ul>
+                            <li>COMPRAR</li>
+                            <li>ALUGAR</li>
+                            <li>IMÓVEIS USADOS</li>
+                            <li>BEST FRIDAY</li>
+                        </ul>
+                    </div>
+                    <div class="order-by">
+                        <div id="ober-by-icon-1"></div>
+                        <h2>Ordenar por</h2>
+                        <div id="ober-by-icon-2"></div>
+                        <div id="ober-by-icon-3"></div>
+                        <div id="ober-by-icon-4"></div>                        
+                    </div>
+                </div>
+                <div class="search-results">
+                    <div class="properties-count">
+                        <h1 id="number-properties"><span id="count"></span> <span id="count-text"></span></h1>
+                    </div>
+                    <div class="city-tag"><p id="city-tag"></p></div>
+                    <div class="properties"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="index.js" type="module"></script>
+</body>
+</html>
